@@ -1,9 +1,9 @@
-# flutter_roadmap
+# Flutter Roadmap
+Topics that are Covered 
 
-A new Flutter project.
-**Day 1** 
-Inherited Widget
-**Day 2** 
-Navigator 
-**Day 3**
-Profile UI
+* **Day 1** 
+  * Inherited Widget
+* **Day 2** 
+  * Navigator 
+* **Day 3**
+  * Profile UI
