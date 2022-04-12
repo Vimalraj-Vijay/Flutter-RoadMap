@@ -4,7 +4,6 @@ class Strings{
   static const day1InheritedWidget  ="Day 1 Inherited Widget";
   static const day2Navigation  ="Day 2 Navigation Push/ Pop";
   static const day3Profile  ="Day 3 Profie Page UI";
-
   // Day 3
   static const profile  ="Profile";
   static const titleName  ="Name";
@@ -15,6 +14,10 @@ class Strings{
   static const hintValueEmail  ="abc@gmail.com";
   static const titleDesc  ="Tell me about yourself";
   static const hintValueDesc  ="I am software engineer Working in Deloitte.....";
+
+  static const day4Listviews  ="Day 4 ListView";
+  static const listViewTypes  ="Types of list view";
+  static const generalListView  ="General ListView with ListTile";
 
 
 }

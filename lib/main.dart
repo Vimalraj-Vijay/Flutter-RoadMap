@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/ProfileHome.dart';
+import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
+import 'package:flutter_roadmap/day_4_listview/listview_types.dart';
 import 'package:flutter_roadmap/utils/GlobalContext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.lobsterTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.archivoNarrowTextTheme(Theme.of(context).textTheme),
         primarySwatch: Colors.amber,
       ),
       initialRoute: MyHomePage.id,
@@ -75,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
           Buttons.getElevatedButton(Strings.day3Profile, () {
             _navigateToNextScreenUsingNamed(context, ProfileHome.id);
+          }),
+          Buttons.getElevatedButton(Strings.day4Listviews, () {
+            _navigateToNextScreenUsingNamed(context, ListViewTypes.id);
           }),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
