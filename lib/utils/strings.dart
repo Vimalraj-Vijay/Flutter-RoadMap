@@ -18,6 +18,7 @@ class Strings{
   static const day4Listviews  ="Day 4 ListView";
   static const listViewTypes  ="Types of list view";
   static const generalListView  ="General ListView with ListTile";
+  static const gridview  ="Grid View";
 
 
 }

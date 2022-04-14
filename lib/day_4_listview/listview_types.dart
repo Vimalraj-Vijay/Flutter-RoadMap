@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
+import 'package:flutter_roadmap/day_4_listview/gridview_type.dart';
 import 'package:flutter_roadmap/day_4_listview/model/ListviewTypesModel.dart';
 
 import '../utils/strings.dart';
@@ -55,6 +56,7 @@ class ListViewTypes extends StatelessWidget {
 
   List<ListViewTypesModel> generateList() {
     listviewTypes.add(ListViewTypesModel(Strings.generalListView, GeneralListviewBuilder.id));
+    listviewTypes.add(ListViewTypesModel(Strings.gridview, GridviewType.id));
     return listviewTypes;
   }
 }
