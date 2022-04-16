@@ -7,10 +7,8 @@ class CurrentScore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Info info = Info.of(context);
-    return Container(
-      child: Text(
-        info.score.toString(),
-      ),
+    return Text(
+      info.score.toString(),
     );
   }
 }

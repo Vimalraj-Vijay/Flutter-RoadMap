@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+//ignore: must_be_immutable
 class EditableViews extends StatefulWidget {
-  var title;
-  var value;
+  dynamic title;
+  dynamic value;
 
   EditableViews({Key? key, @required this.title, @required this.value})
       : super(key: key);

@@ -7,7 +7,7 @@ import 'package:flutter_roadmap/utils/strings.dart';
 class UserDetail extends StatefulWidget {
   static const id = "/user_details";
 
-  UserDetail({Key? key}) : super(key: key);
+  const UserDetail({Key? key}) : super(key: key);
 
   @override
   State<UserDetail> createState() => _UserDetailState();
@@ -53,33 +53,31 @@ class _UserDetailState extends State<UserDetail> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 25,
-                    backgroundImage: AssetImage("assests/images/profile.jpg"),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        _userModel[index].username,
-                        style: const TextStyle(
-                            color: Colors.redAccent,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w800),
-                      ),
-                      Text(_userModel[index].name),
-                      Text(_userModel[index].email),
-                    ],
-                  )
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/profile.jpg"),
+                ),
+                const SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      _userModel[index].username,
+                      style: const TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w800),
+                    ),
+                    Text(_userModel[index].name),
+                    Text(_userModel[index].email),
+                  ],
+                )
+              ],
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 10),
@@ -121,14 +119,14 @@ class _UserDetailState extends State<UserDetail> {
   Widget getSpannedText(String title, String value) {
     return RichText(
       text: TextSpan(
-        style: TextStyle(fontSize: 14),
+        style: const TextStyle(fontSize: 14),
         children: <TextSpan>[
           TextSpan(
             text: title,
             style: const TextStyle(
                 color: Colors.purple, fontWeight: FontWeight.w800),
           ),
-          TextSpan(text: " "),
+          const TextSpan(text: " "),
           TextSpan(
             text: value,
             style: const TextStyle(

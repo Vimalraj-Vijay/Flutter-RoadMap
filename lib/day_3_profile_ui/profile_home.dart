@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_roadmap/day_3_profile_ui/EditableViews.dart';
+import 'package:flutter_roadmap/day_3_profile_ui/editable_views.dart';
 import 'package:flutter_roadmap/utils/strings.dart';
 
 class ProfileHome extends StatelessWidget {
@@ -21,15 +21,16 @@ class ProfileHome extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          height: MediaQuery.of(context).size.height + MediaQuery.of(context).viewInsets.bottom/3,
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height +
+              MediaQuery.of(context).viewInsets.bottom / 3,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              CircleAvatar(
-                backgroundImage: AssetImage("assests/user_profile.jpeg"),
+              const CircleAvatar(
+                backgroundImage: AssetImage("assets/user_profile.jpeg"),
                 radius: 100,
               ),
               EditableViews(

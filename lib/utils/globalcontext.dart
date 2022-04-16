@@ -1,17 +1,13 @@
-
-
-
 import 'package:flutter/material.dart';
 
 class GlobalContext {
-  static dynamic context = null;
+  static dynamic context;
 
-  static void setContext(BuildContext buildContext){
+  static void setContext(BuildContext buildContext) {
     context ??= buildContext;
   }
 
   static BuildContext getContext() {
     return context;
   }
-
 }
