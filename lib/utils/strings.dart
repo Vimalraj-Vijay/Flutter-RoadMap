@@ -15,10 +15,12 @@ class Strings{
   static const titleDesc  ="Tell me about yourself";
   static const hintValueDesc  ="I am software engineer Working in Deloitte.....";
 
+  // Day 4
   static const day4Listviews  ="Day 4 ListView";
   static const listViewTypes  ="Types of list view";
   static const generalListView  ="General ListView with ListTile";
   static const gridview  ="Grid View";
 
-
+  // Day 5
+  static const day5Networking  ="Day 5 Networking using http";
 }
