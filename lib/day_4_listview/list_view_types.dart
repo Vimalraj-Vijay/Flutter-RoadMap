@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
 import 'package:flutter_roadmap/day_4_listview/gridview_type.dart';
-import 'package:flutter_roadmap/day_4_listview/model/ListviewTypesModel.dart';
+import 'package:flutter_roadmap/day_4_listview/model/list_view_types_model.dart';
 
 import '../utils/strings.dart';
 
 class ListViewTypes extends StatelessWidget {
-  static const id = "/listviewtypes";
-  List<ListViewTypesModel> listviewTypes = [];
+  static const id = "/listViewTypes";
+  final List<ListViewTypesModel> listviewTypes = [];
 
   ListViewTypes({Key? key}) : super(key: key);
 
@@ -35,11 +34,10 @@ class ListViewTypes extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       child: Container(
-        margin: EdgeInsets.only(top: 5),
+        margin: const EdgeInsets.only(top: 5),
         child: ElevatedButton(
           onPressed: () {
-            print(generateList()[index].name);
-            Navigator.pushNamed(context, generateList()[index].routeid);
+            Navigator.pushNamed(context, generateList()[index].routeId);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15),
@@ -55,7 +53,8 @@ class ListViewTypes extends StatelessWidget {
   }
 
   List<ListViewTypesModel> generateList() {
-    listviewTypes.add(ListViewTypesModel(Strings.generalListView, GeneralListviewBuilder.id));
+    listviewTypes.add(
+        ListViewTypesModel(Strings.generalListView, GeneralListviewBuilder.id));
     listviewTypes.add(ListViewTypesModel(Strings.gridview, GridviewType.id));
     return listviewTypes;
   }
