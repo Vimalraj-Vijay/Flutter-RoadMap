@@ -6,6 +6,7 @@ import 'package:flutter_roadmap/day_3_profile_ui/ProfileHome.dart';
 import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
 import 'package:flutter_roadmap/day_4_listview/gridview_type.dart';
 import 'package:flutter_roadmap/day_4_listview/listview_types.dart';
+import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/main.dart';
 
 Map<String, WidgetBuilder> initRoutes() {
@@ -18,5 +19,6 @@ Map<String, WidgetBuilder> initRoutes() {
     ListViewTypes.id: (BuildContext ctx) => ListViewTypes(),
     GeneralListviewBuilder.id: (BuildContext ctx) => GeneralListviewBuilder(),
     GridviewType.id: (BuildContext ctx) => GridviewType(),
+    UserDetail.id: (BuildContext ctx) => UserDetail(),
   };
 }

@@ -4,6 +4,7 @@ import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/ProfileHome.dart';
 import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
 import 'package:flutter_roadmap/day_4_listview/listview_types.dart';
+import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/utils/GlobalContext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
@@ -80,6 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
           Buttons.getElevatedButton(Strings.day4Listviews, () {
             _navigateToNextScreenUsingNamed(context, ListViewTypes.id);
+          }),
+          Buttons.getElevatedButton(Strings.day5Networking, () {
+            _navigateToNextScreenUsingNamed(context, UserDetail.id);
           }),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
