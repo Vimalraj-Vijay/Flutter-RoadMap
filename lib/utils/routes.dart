@@ -9,6 +9,8 @@ import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/main.dart';
 
+import '../day_6_viewgroups/view_group_list.dart';
+
 Map<String, WidgetBuilder> initRoutes() {
   return {
     MyHomePage.id: (BuildContext ctx) =>
@@ -22,5 +24,6 @@ Map<String, WidgetBuilder> initRoutes() {
         const GeneralListviewBuilder(),
     GridviewType.id: (BuildContext ctx) => GridviewType(),
     UserDetail.id: (BuildContext ctx) => const UserDetail(),
+    ViewGroupList.id: (BuildContext ctx) => ViewGroupList(),
   };
 }

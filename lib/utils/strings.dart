@@ -22,4 +22,7 @@ class Strings {
 
   // Day 5
   static const day5Networking = "Day 5 Networking using http";
+  // Day 6
+  static const day6ViewGroups = "Day 6 Viewgroups";
+  static const stack = "Stack";
 }

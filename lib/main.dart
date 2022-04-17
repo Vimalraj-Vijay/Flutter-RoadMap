@@ -9,6 +9,7 @@ import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'day_6_viewgroups/view_group_list.dart';
 import 'utils/strings.dart';
 
 void main() {
@@ -84,6 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
           Buttons.getElevatedButton(Strings.day5Networking, () {
             _navigateToNextScreenUsingNamed(context, UserDetail.id);
+          }),
+          Buttons.getElevatedButton(Strings.day6ViewGroups, () {
+            _navigateToNextScreenUsingNamed(context, ViewGroupList.id);
           }),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
