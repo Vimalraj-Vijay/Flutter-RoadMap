@@ -7,3 +7,9 @@ Topics that are Covered
   * Navigator 
 * **Day 3**
   * Profile UI
+* **Day 4**
+  * Listview
+* **Day 5**
+  * Networking using http
+* **Day 6**
+  * Viewgroups in flutter
