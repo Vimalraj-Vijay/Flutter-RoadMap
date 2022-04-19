@@ -7,6 +7,7 @@ import 'package:flutter_roadmap/day_4_listview/general_listview_builder.dart';
 import 'package:flutter_roadmap/day_4_listview/gridview_type.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
+import 'package:flutter_roadmap/day_6_viewgroups/stack_view.dart';
 import 'package:flutter_roadmap/main.dart';
 
 import '../day_6_viewgroups/view_group_list.dart';
@@ -25,5 +26,6 @@ Map<String, WidgetBuilder> initRoutes() {
     GridviewType.id: (BuildContext ctx) => GridviewType(),
     UserDetail.id: (BuildContext ctx) => const UserDetail(),
     ViewGroupList.id: (BuildContext ctx) => ViewGroupList(),
+    StackView.id: (BuildContext ctx) => const StackView(),
   };
 }
