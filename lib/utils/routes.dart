@@ -10,6 +10,7 @@ import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/day_6_viewgroups/stack_view.dart';
 import 'package:flutter_roadmap/main.dart';
 
+import '../day_6_viewgroups/constrained_box_view.dart';
 import '../day_6_viewgroups/view_group_list.dart';
 
 Map<String, WidgetBuilder> initRoutes() {
@@ -27,5 +28,6 @@ Map<String, WidgetBuilder> initRoutes() {
     UserDetail.id: (BuildContext ctx) => const UserDetail(),
     ViewGroupList.id: (BuildContext ctx) => ViewGroupList(),
     StackView.id: (BuildContext ctx) => const StackView(),
+    ConstrainedBoxView.id: (BuildContext ctx) => const ConstrainedBoxView(),
   };
 }

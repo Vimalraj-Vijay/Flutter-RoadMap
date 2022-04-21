@@ -25,4 +25,5 @@ class Strings {
   // Day 6
   static const day6ViewGroups = "Day 6 Viewgroups";
   static const stack = "Stack";
+  static const constrainedBox = "Constrained Box";
 }

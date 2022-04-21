@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_roadmap/day_6_viewgroups/constrained_box_view.dart';
 import 'package:flutter_roadmap/day_6_viewgroups/model/view_group_model.dart';
 import 'package:flutter_roadmap/day_6_viewgroups/stack_view.dart';
 import 'package:flutter_roadmap/utils/strings.dart';
@@ -25,6 +26,8 @@ class ViewGroupList extends StatelessWidget {
 
   List<ViewGroupModel> generateList() {
     viewGroupModelList.add(ViewGroupModel(Strings.stack, StackView.id));
+    viewGroupModelList
+        .add(ViewGroupModel(Strings.constrainedBox, ConstrainedBoxView.id));
     return viewGroupModelList;
   }
 
