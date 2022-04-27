@@ -12,6 +12,7 @@ import 'package:flutter_roadmap/main.dart';
 
 import '../day_6_viewgroups/constrained_box_view.dart';
 import '../day_6_viewgroups/view_group_list.dart';
+import '../day_7_shared_pref/saved_shared_pref.dart';
 
 Map<String, WidgetBuilder> initRoutes() {
   return {
@@ -29,5 +30,6 @@ Map<String, WidgetBuilder> initRoutes() {
     ViewGroupList.id: (BuildContext ctx) => ViewGroupList(),
     StackView.id: (BuildContext ctx) => const StackView(),
     ConstrainedBoxView.id: (BuildContext ctx) => const ConstrainedBoxView(),
+    SavedSharedPref.id: (BuildContext ctx) => const SavedSharedPref(),
   };
 }

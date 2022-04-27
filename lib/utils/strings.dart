@@ -26,4 +26,10 @@ class Strings {
   static const day6ViewGroups = "Day 6 Viewgroups";
   static const stack = "Stack";
   static const constrainedBox = "Constrained Box";
+
+  // Day 7
+  static const day7SharedPref = "Day 7 SharedPref";
+  static const name = "Enter username";
+  static const password = "Enter password";
+  static const save = "Save";
 }

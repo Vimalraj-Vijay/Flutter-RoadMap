@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Buttons {
-  static Widget getElevatedButton(String text, VoidCallback onPressed) {
-    return Center(
+Widget getElevatedButton(String text, VoidCallback onPressed) {
+  return Center(
+    child: Container(
+      margin: const EdgeInsets.all(10),
+      width: double.infinity,
       child: ElevatedButton(
         onPressed: onPressed,
         child: Text(text),
@@ -12,6 +14,6 @@ class Buttons {
           padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
