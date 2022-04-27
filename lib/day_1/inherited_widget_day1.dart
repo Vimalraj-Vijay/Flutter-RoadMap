@@ -17,6 +17,7 @@ import 'info.dart';
 //  * https://www.woolha.com/tutorials/flutter-using-inheritedwidget-examples
 
 class InheritedWidgetDay1 extends StatefulWidget {
+  static const id = "/inheritedWidgetDay1";
   const InheritedWidgetDay1({Key? key}) : super(key: key);
 
   @override

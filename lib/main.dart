@@ -4,6 +4,7 @@ import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/profile_home.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
+import 'package:flutter_roadmap/main_day_model.dart';
 import 'package:flutter_roadmap/utils/globalcontext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
@@ -60,49 +61,51 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<MainDayModel> _mainDayModel = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          const SizedBox(
-            height: 20,
-          ),
-          getElevatedButton(Strings.day1InheritedWidget, () {
-            _navigateToNextScreen(context, const InheritedWidgetDay1());
-          }),
-          getElevatedButton(Strings.day2Navigation, () {
-            _navigateToNextScreen(context, const FirstRoute());
-          }),
-          getElevatedButton(Strings.day3Profile, () {
-            _navigateToNextScreenUsingNamed(context, ProfileHome.id);
-          }),
-          getElevatedButton(Strings.day4Listviews, () {
-            _navigateToNextScreenUsingNamed(context, ListViewTypes.id);
-          }),
-          getElevatedButton(Strings.day5Networking, () {
-            _navigateToNextScreenUsingNamed(context, UserDetail.id);
-          }),
-          getElevatedButton(Strings.day6ViewGroups, () {
-            _navigateToNextScreenUsingNamed(context, ViewGroupList.id);
-          }),
-          getElevatedButton(Strings.day7SharedPref, () {
-            _navigateToNextScreenUsingNamed(context, SavedSharedPref.id);
-          }),
-        ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ListView.builder(
+        itemBuilder: _getDayBasedTaskList,
+        itemCount: getTaskBasedOnDayLists().length,
+      ),
     );
   }
 
-  void _navigateToNextScreen(BuildContext context, dynamic route) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => route));
+  Widget _getDayBasedTaskList(BuildContext context, int index) {
+    return getElevatedButton(
+        _mainDayModel[index].taskName,
+        () => {
+              _navigateToNextScreenUsingNamed(
+                  context, _mainDayModel[index].routeId)
+            },
+        _mainDayModel[index].textColorDark,
+        _mainDayModel[index].backgroundColor);
   }
 
   void _navigateToNextScreenUsingNamed(BuildContext context, String routeName) {
     Navigator.pushNamed(context, routeName);
+  }
+
+  List<MainDayModel> getTaskBasedOnDayLists() {
+    _mainDayModel.add(MainDayModel(Strings.day1InheritedWidget,
+        InheritedWidgetDay1.id, false, Colors.green));
+    _mainDayModel.add(MainDayModel(
+        Strings.day2Navigation, FirstRoute.id, true, Colors.yellow));
+    _mainDayModel.add(
+        MainDayModel(Strings.day3Profile, ProfileHome.id, false, Colors.green));
+    _mainDayModel.add(MainDayModel(
+        Strings.day4Listviews, ListViewTypes.id, true, Colors.yellow));
+    _mainDayModel.add(MainDayModel(
+        Strings.day5Networking, UserDetail.id, false, Colors.green));
+    _mainDayModel.add(MainDayModel(
+        Strings.day6ViewGroups, ViewGroupList.id, true, Colors.yellow));
+    _mainDayModel.add(MainDayModel(
+        Strings.day7SharedPref, SavedSharedPref.id, false, Colors.green));
+    return _mainDayModel;
   }
 }

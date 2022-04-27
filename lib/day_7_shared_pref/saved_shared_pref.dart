@@ -39,7 +39,9 @@ class _SavedSharedPrefState extends State<SavedSharedPref> {
           getElevatedButton(
               Strings.save,
               () =>
-                  onSaved(nameTextController.text, passwordTextController.text))
+                  onSaved(nameTextController.text, passwordTextController.text),
+              true,
+              Colors.amber)
         ],
       ),
     );
