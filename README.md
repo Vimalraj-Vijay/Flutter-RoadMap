@@ -12,4 +12,6 @@ Topics that are Covered
 * **Day 5**
   * Networking using http
 * **Day 6**
-  * Viewgroups in flutter
+  * Viewgroups in flutter (Stack, Constrained box, expanded..)
+* **Day 7**
+  * Shared preferences flutter
