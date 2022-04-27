@@ -10,6 +10,7 @@ import 'package:flutter_roadmap/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'day_6_viewgroups/view_group_list.dart';
+import 'day_7_shared_pref/saved_shared_pref.dart';
 import 'utils/strings.dart';
 
 void main() {
@@ -71,23 +72,26 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 20,
           ),
-          Buttons.getElevatedButton(Strings.day1InheritedWidget, () {
+          getElevatedButton(Strings.day1InheritedWidget, () {
             _navigateToNextScreen(context, const InheritedWidgetDay1());
           }),
-          Buttons.getElevatedButton(Strings.day2Navigation, () {
+          getElevatedButton(Strings.day2Navigation, () {
             _navigateToNextScreen(context, const FirstRoute());
           }),
-          Buttons.getElevatedButton(Strings.day3Profile, () {
+          getElevatedButton(Strings.day3Profile, () {
             _navigateToNextScreenUsingNamed(context, ProfileHome.id);
           }),
-          Buttons.getElevatedButton(Strings.day4Listviews, () {
+          getElevatedButton(Strings.day4Listviews, () {
             _navigateToNextScreenUsingNamed(context, ListViewTypes.id);
           }),
-          Buttons.getElevatedButton(Strings.day5Networking, () {
+          getElevatedButton(Strings.day5Networking, () {
             _navigateToNextScreenUsingNamed(context, UserDetail.id);
           }),
-          Buttons.getElevatedButton(Strings.day6ViewGroups, () {
+          getElevatedButton(Strings.day6ViewGroups, () {
             _navigateToNextScreenUsingNamed(context, ViewGroupList.id);
+          }),
+          getElevatedButton(Strings.day7SharedPref, () {
+            _navigateToNextScreenUsingNamed(context, SavedSharedPref.id);
           }),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
