@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_2_navigation/second_route.dart';
 import 'package:flutter_roadmap/day_2_navigation/third_route.dart';
@@ -18,6 +19,7 @@ Map<String, WidgetBuilder> initRoutes() {
   return {
     MyHomePage.id: (BuildContext ctx) =>
         MyHomePage(title: MyHomePage.headerTitle),
+    InheritedWidgetDay1.id: (BuildContext ctx) => const InheritedWidgetDay1(),
     FirstRoute.id: (BuildContext ctx) => const FirstRoute(),
     SecondRoute.id: (BuildContext ctx) => const SecondRoute(),
     ThirdRoute.id: (BuildContext ctx) => const ThirdRoute(),
