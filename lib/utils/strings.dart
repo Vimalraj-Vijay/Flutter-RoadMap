@@ -32,4 +32,8 @@ class Strings {
   static const name = "Enter username";
   static const password = "Enter password";
   static const save = "Save";
+
+  // Day 8
+  static const day8StateChanges = "Day 8 State Changes";
+  static const changeColor = "Change Colors";
 }
