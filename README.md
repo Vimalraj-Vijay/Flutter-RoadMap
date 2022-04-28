@@ -15,3 +15,5 @@ Topics that are Covered
   * Viewgroups in flutter (Stack, Constrained box, expanded..)
 * **Day 7**
   * Shared preferences flutter
+* **Day 8**
+  * State changes (Change View Background color randomly when button)
