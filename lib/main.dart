@@ -4,6 +4,7 @@ import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/profile_home.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
+import 'package:flutter_roadmap/day_9_expansion_tile/expansion_view.dart';
 import 'package:flutter_roadmap/main_day_model.dart';
 import 'package:flutter_roadmap/utils/globalcontext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
@@ -109,6 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Strings.day7SharedPref, SavedSharedPref.id, false, Colors.green));
     _mainDayModel.add(MainDayModel(
         Strings.day8StateChanges, StateChange.id, true, Colors.yellow));
+    _mainDayModel.add(MainDayModel(
+        Strings.day9ExpansionTile, ExpansionView.id, false, Colors.green));
     return _mainDayModel;
   }
 }

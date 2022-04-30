@@ -9,6 +9,7 @@ import 'package:flutter_roadmap/day_4_listview/gridview_type.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/day_6_viewgroups/stack_view.dart';
+import 'package:flutter_roadmap/day_9_expansion_tile/expansion_view.dart';
 import 'package:flutter_roadmap/main.dart';
 
 import '../day_6_viewgroups/constrained_box_view.dart';
@@ -35,5 +36,6 @@ Map<String, WidgetBuilder> initRoutes() {
     ConstrainedBoxView.id: (BuildContext ctx) => const ConstrainedBoxView(),
     SavedSharedPref.id: (BuildContext ctx) => const SavedSharedPref(),
     StateChange.id: (BuildContext ctx) => const StateChange(),
+    ExpansionView.id: (BuildContext ctx) => const ExpansionView(),
   };
 }
