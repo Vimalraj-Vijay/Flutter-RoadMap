@@ -42,4 +42,15 @@ class Strings {
   static const question = "Essay about Chennai";
   static const answer =
       "Chennai (formerly known as Madras) is the capital city of the Indian state of Tamil Nadu. It has a population of about 7 million people. Almost 10% of all of the people in the state live in Chennai. The city is the fourth largest city of India. It was founded in 1661 by the British East India Company. The city is on the Coromandel Coast of the Bay of Bengal. Chennai is the automobile capital of India. It is also referred as the Detroit of South Asia. The 12 km (7 mi) long Marina Beach in Chennai, is one of the longest beaches in the world. The city is separated into three parts by two rivers. The Cooum River divides the city into almost half and the Adyar River divides the southern half of the city into two parts. The historic Buckingham Canal runs through the city. It is almost parallel to the coast. The 350 year old city still has much of its old charm. Today, it is a big commercial and industrial centre. The city has much cultural heritage. The temples, shrines, forts and palaces of the city combine its past with the present. It is the birthplace of Indian politician Stalin";
+
+  // Day 10
+  static const day10platformBasedAlertDialog =
+      "Day 10 Platform Based AlertDialog";
+  static const alertTitle = "Android/iOS";
+  static const androidAlertDesc =
+      "This title belongs to android dialog is it correct?";
+  static const iosAlertDesc =
+      "Hey!! This is an iOS Alert dialog do you like it?";
+  static const yes = "Yes";
+  static const no = "No";
 }

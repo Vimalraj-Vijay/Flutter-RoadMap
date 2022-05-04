@@ -11,6 +11,7 @@ import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'day_10_platform_based_alert_dialogs/show_dialog.dart';
 import 'day_6_viewgroups/view_group_list.dart';
 import 'day_7_shared_pref/saved_shared_pref.dart';
 import 'day_8_statechanges/state_change.dart';
@@ -112,6 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Strings.day8StateChanges, StateChange.id, true, Colors.yellow));
     _mainDayModel.add(MainDayModel(
         Strings.day9ExpansionTile, ExpansionView.id, false, Colors.green));
+    _mainDayModel.add(MainDayModel(Strings.day10platformBasedAlertDialog,
+        ShowDialog.id, true, Colors.yellow));
     return _mainDayModel;
   }
 }
