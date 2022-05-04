@@ -19,4 +19,6 @@ Topics that are Covered
   * State changes (Change View Background color randomly when button)
 * **Day 9**
   * Expansion tile widget
+* **Day 10**
+  * Alert Dialog based on platform(iOS/Android)
 
