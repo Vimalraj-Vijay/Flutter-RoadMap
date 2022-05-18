@@ -21,4 +21,5 @@ Topics that are Covered
   * Expansion tile widget
 * **Day 10**
   * Alert Dialog based on platform(iOS/Android)
-
+* **Day 11**
+  * Platform based widgets using [flutter_platform_widgets: ^1.20.0](https://pub.dev/packages/flutter_platform_widgets)
