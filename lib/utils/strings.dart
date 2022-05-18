@@ -53,4 +53,7 @@ class Strings {
       "Hey!! This is an iOS Alert dialog do you like it?";
   static const yes = "Yes";
   static const no = "No";
+
+  // Day 11
+  static const day11PlatformUI = "Day 11 Platform UI";
 }
