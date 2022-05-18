@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
+import 'package:flutter_roadmap/day_11_platform_based_ui/all_platform_based_widgets.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/profile_home.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
@@ -115,6 +116,8 @@ class _MyHomePageState extends State<MyHomePage> {
         Strings.day9ExpansionTile, ExpansionView.id, false, Colors.green));
     _mainDayModel.add(MainDayModel(Strings.day10platformBasedAlertDialog,
         ShowDialog.id, true, Colors.yellow));
+    _mainDayModel.add(MainDayModel(Strings.day11PlatformUI,
+        AlPlatformBasedWidget.id, false, Colors.green));
     return _mainDayModel;
   }
 }

@@ -13,6 +13,7 @@ import 'package:flutter_roadmap/day_9_expansion_tile/expansion_view.dart';
 import 'package:flutter_roadmap/main.dart';
 
 import '../day_10_platform_based_alert_dialogs/show_dialog.dart';
+import '../day_11_platform_based_ui/all_platform_based_widgets.dart';
 import '../day_6_viewgroups/constrained_box_view.dart';
 import '../day_6_viewgroups/view_group_list.dart';
 import '../day_7_shared_pref/saved_shared_pref.dart';
@@ -39,5 +40,7 @@ Map<String, WidgetBuilder> initRoutes() {
     StateChange.id: (BuildContext ctx) => const StateChange(),
     ExpansionView.id: (BuildContext ctx) => const ExpansionView(),
     ShowDialog.id: (BuildContext ctx) => const ShowDialog(),
+    AlPlatformBasedWidget.id: (BuildContext ctx) =>
+        const AlPlatformBasedWidget(),
   };
 }
