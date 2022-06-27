@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
 import 'package:flutter_roadmap/day_11_platform_based_ui/all_platform_based_widgets.dart';
+import 'package:flutter_roadmap/day_12_state_management/provider/products_provider.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/profile_home.dart';
 import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
@@ -11,8 +12,11 @@ import 'package:flutter_roadmap/utils/globalcontext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import 'day_10_platform_based_alert_dialogs/show_dialog.dart';
+import 'day_12_state_management/provider/cart.dart';
+import 'day_12_state_management/shopping_home.dart';
 import 'day_6_viewgroups/view_group_list.dart';
 import 'day_7_shared_pref/saved_shared_pref.dart';
 import 'day_8_statechanges/state_change.dart';
@@ -29,16 +33,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GlobalContext.setContext(context);
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme:
-            GoogleFonts.archivoNarrowTextTheme(Theme.of(context).textTheme),
-        primarySwatch: Colors.amber,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProductProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Cart(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          textTheme:
+              GoogleFonts.archivoNarrowTextTheme(Theme.of(context).textTheme),
+          primarySwatch: Colors.amber,
+        ),
+        initialRoute: MyHomePage.id,
+        routes: initRoutes(),
       ),
-      initialRoute: MyHomePage.id,
-      routes: initRoutes(),
     );
   }
 }
@@ -118,6 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ShowDialog.id, true, Colors.yellow));
     _mainDayModel.add(MainDayModel(Strings.day11PlatformUI,
         AlPlatformBasedWidget.id, false, Colors.green));
+    _mainDayModel
+        .add(MainDayModel(Strings.day12, ShoppingHome.id, true, Colors.yellow));
     return _mainDayModel;
   }
 }

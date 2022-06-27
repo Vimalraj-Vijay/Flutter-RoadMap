@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
+import 'package:flutter_roadmap/day_12_state_management/screens/product_detail.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_2_navigation/second_route.dart';
 import 'package:flutter_roadmap/day_2_navigation/third_route.dart';
@@ -14,6 +15,8 @@ import 'package:flutter_roadmap/main.dart';
 
 import '../day_10_platform_based_alert_dialogs/show_dialog.dart';
 import '../day_11_platform_based_ui/all_platform_based_widgets.dart';
+import '../day_12_state_management/screens/cart_details.dart';
+import '../day_12_state_management/shopping_home.dart';
 import '../day_6_viewgroups/constrained_box_view.dart';
 import '../day_6_viewgroups/view_group_list.dart';
 import '../day_7_shared_pref/saved_shared_pref.dart';
@@ -42,5 +45,8 @@ Map<String, WidgetBuilder> initRoutes() {
     ShowDialog.id: (BuildContext ctx) => const ShowDialog(),
     AlPlatformBasedWidget.id: (BuildContext ctx) =>
         const AlPlatformBasedWidget(),
+    ShoppingHome.id: (BuildContext ctx) => const ShoppingHome(),
+    ProductDetail.id: (BuildContext ctx) => const ProductDetail(),
+    CartDetails.id: (BuildContext ctx) => const CartDetails(),
   };
 }
