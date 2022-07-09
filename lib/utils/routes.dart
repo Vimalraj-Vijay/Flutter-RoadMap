@@ -16,6 +16,7 @@ import 'package:flutter_roadmap/main.dart';
 import '../day_10_platform_based_alert_dialogs/show_dialog.dart';
 import '../day_11_platform_based_ui/all_platform_based_widgets.dart';
 import '../day_12_state_management/screens/cart_details.dart';
+import '../day_12_state_management/screens/orders_screen.dart';
 import '../day_12_state_management/shopping_home.dart';
 import '../day_6_viewgroups/constrained_box_view.dart';
 import '../day_6_viewgroups/view_group_list.dart';
@@ -48,5 +49,6 @@ Map<String, WidgetBuilder> initRoutes() {
     ShoppingHome.id: (BuildContext ctx) => const ShoppingHome(),
     ProductDetail.id: (BuildContext ctx) => const ProductDetail(),
     CartDetails.id: (BuildContext ctx) => const CartDetails(),
+    OrdersScreen.id: (BuildContext ctx) => const OrdersScreen(),
   };
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
 import 'package:flutter_roadmap/day_11_platform_based_ui/all_platform_based_widgets.dart';
+import 'package:flutter_roadmap/day_12_state_management/provider/orders.dart';
 import 'package:flutter_roadmap/day_12_state_management/provider/products_provider.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_3_profile_ui/profile_home.dart';
@@ -8,8 +9,8 @@ import 'package:flutter_roadmap/day_4_listview/list_view_types.dart';
 import 'package:flutter_roadmap/day_5_networking/ui/user_detail.dart';
 import 'package:flutter_roadmap/day_9_expansion_tile/expansion_view.dart';
 import 'package:flutter_roadmap/main_day_model.dart';
-import 'package:flutter_roadmap/utils/globalcontext.dart';
 import 'package:flutter_roadmap/utils/buttons.dart';
+import 'package:flutter_roadmap/utils/globalcontext.dart';
 import 'package:flutter_roadmap/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +41,10 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => Cart(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Orders(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

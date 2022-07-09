@@ -7,6 +7,7 @@ import 'package:flutter_roadmap/day_12_state_management/widgets/badge.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/strings.dart';
+import '../widgets/app_drawer.dart';
 import '../widgets/product_item.dart';
 
 class ProductOverviewScreen extends StatefulWidget {
@@ -60,13 +61,8 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
                 icon: const Icon(Icons.shopping_cart)),
           ),
         ],
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
       ),
+      drawer: const AppDrawer(),
       body: products.isNotEmpty
           ? GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
