@@ -23,3 +23,5 @@ Topics that are Covered
   * Alert Dialog based on platform(iOS/Android)
 * **Day 11**
   * Platform based widgets using [flutter_platform_widgets: ^1.20.0](https://pub.dev/packages/flutter_platform_widgets)
+* **Day 12**
+  * Shopping app with [Provider](https://pub.dev/packages/provider) using static product datas
