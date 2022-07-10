@@ -6,6 +6,8 @@ import 'package:flutter_roadmap/day_12_state_management/widgets/empty_cart.dart'
 import 'package:flutter_roadmap/utils/common_appbar.dart';
 import 'package:provider/provider.dart';
 
+import '../provider/orders.dart';
+
 class CartDetails extends StatelessWidget {
   static const id = "/cartDetails";
 
@@ -14,6 +16,7 @@ class CartDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
+    final placeOrder = Provider.of<Orders>(context, listen: false);
     return Scaffold(
       appBar: getAppBar("Your cart", context),
       body: Column(
@@ -32,7 +35,7 @@ class CartDetails extends StatelessWidget {
                   const Spacer(),
                   Chip(
                     label: Text(
-                      "\$ ${cart.totalAmount.toString()}",
+                      "\$ ${cart.totalAmount.toStringAsFixed(2)}",
                       style: TextStyle(color: Theme.of(context).primaryColor),
                     ),
                     backgroundColor: Colors.purple,
@@ -42,7 +45,13 @@ class CartDetails extends StatelessWidget {
                   ),
                   if (cart.cartCount() > 0)
                     ElevatedButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        placeOrder.addOrders(
+                          cart.items.values.toList(),
+                          cart.totalAmount,
+                        ),
+                        cart.clearCart()
+                      },
                       child: const Text("ORDER NOW"),
                       style: ButtonStyle(
                         foregroundColor:
