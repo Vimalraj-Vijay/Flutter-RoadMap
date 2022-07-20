@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_1/inherited_widget_day1.dart';
+import 'package:flutter_roadmap/day_12_state_management/screens/manage_products.dart';
 import 'package:flutter_roadmap/day_12_state_management/screens/product_detail.dart';
 import 'package:flutter_roadmap/day_2_navigation/first_route.dart';
 import 'package:flutter_roadmap/day_2_navigation/second_route.dart';
@@ -50,5 +51,6 @@ Map<String, WidgetBuilder> initRoutes() {
     ProductDetail.id: (BuildContext ctx) => const ProductDetail(),
     CartDetails.id: (BuildContext ctx) => const CartDetails(),
     OrdersScreen.id: (BuildContext ctx) => const OrdersScreen(),
+    ManageProducts.id: (BuildContext ctx) => const ManageProducts(),
   };
 }
