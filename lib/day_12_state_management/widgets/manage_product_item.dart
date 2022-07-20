@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_12_state_management/provider/products.dart';
 
+import '../screens/edit_product.dart';
+
 class ManageProductItem extends StatelessWidget {
   final Products products;
 
@@ -53,7 +55,9 @@ class ManageProductItem extends StatelessWidget {
                     Row(
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, EditProduct.id);
+                            },
                             icon: const Icon(
                               Icons.edit,
                               color: Colors.white,
