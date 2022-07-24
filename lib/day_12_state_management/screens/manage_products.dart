@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_12_state_management/provider/products_provider.dart';
+import 'package:flutter_roadmap/day_12_state_management/screens/edit_product.dart';
 import 'package:flutter_roadmap/day_12_state_management/widgets/app_drawer.dart';
 import 'package:flutter_roadmap/day_12_state_management/widgets/manage_product_item.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,13 @@ class ManageProducts extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Manage Products"),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, EditProduct.id);
+              },
+              icon: const Icon(Icons.add))
+        ],
       ),
       drawer: const AppDrawer(),
       body: ListView.builder(
