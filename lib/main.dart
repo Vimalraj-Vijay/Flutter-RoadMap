@@ -83,6 +83,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var showShoppingAppOnly = true;
   final List<MainDayModel> _mainDayModel = [];
 
   @override
@@ -114,28 +115,30 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<MainDayModel> getTaskBasedOnDayLists() {
-    _mainDayModel.add(MainDayModel(Strings.day1InheritedWidget,
-        InheritedWidgetDay1.id, false, Colors.green));
-    _mainDayModel.add(MainDayModel(
-        Strings.day2Navigation, FirstRoute.id, true, Colors.yellow));
-    _mainDayModel.add(
-        MainDayModel(Strings.day3Profile, ProfileHome.id, false, Colors.green));
-    _mainDayModel.add(MainDayModel(
-        Strings.day4Listviews, ListViewTypes.id, true, Colors.yellow));
-    _mainDayModel.add(MainDayModel(
-        Strings.day5Networking, UserDetail.id, false, Colors.green));
-    _mainDayModel.add(MainDayModel(
-        Strings.day6ViewGroups, ViewGroupList.id, true, Colors.yellow));
-    _mainDayModel.add(MainDayModel(
-        Strings.day7SharedPref, SavedSharedPref.id, false, Colors.green));
-    _mainDayModel.add(MainDayModel(
-        Strings.day8StateChanges, StateChange.id, true, Colors.yellow));
-    _mainDayModel.add(MainDayModel(
-        Strings.day9ExpansionTile, ExpansionView.id, false, Colors.green));
-    _mainDayModel.add(MainDayModel(Strings.day10platformBasedAlertDialog,
-        ShowDialog.id, true, Colors.yellow));
-    _mainDayModel.add(MainDayModel(Strings.day11PlatformUI,
-        AlPlatformBasedWidget.id, false, Colors.green));
+    if (!showShoppingAppOnly) {
+      _mainDayModel.add(MainDayModel(Strings.day1InheritedWidget,
+          InheritedWidgetDay1.id, false, Colors.green));
+      _mainDayModel.add(MainDayModel(
+          Strings.day2Navigation, FirstRoute.id, true, Colors.yellow));
+      _mainDayModel.add(MainDayModel(
+          Strings.day3Profile, ProfileHome.id, false, Colors.green));
+      _mainDayModel.add(MainDayModel(
+          Strings.day4Listviews, ListViewTypes.id, true, Colors.yellow));
+      _mainDayModel.add(MainDayModel(
+          Strings.day5Networking, UserDetail.id, false, Colors.green));
+      _mainDayModel.add(MainDayModel(
+          Strings.day6ViewGroups, ViewGroupList.id, true, Colors.yellow));
+      _mainDayModel.add(MainDayModel(
+          Strings.day7SharedPref, SavedSharedPref.id, false, Colors.green));
+      _mainDayModel.add(MainDayModel(
+          Strings.day8StateChanges, StateChange.id, true, Colors.yellow));
+      _mainDayModel.add(MainDayModel(
+          Strings.day9ExpansionTile, ExpansionView.id, false, Colors.green));
+      _mainDayModel.add(MainDayModel(Strings.day10platformBasedAlertDialog,
+          ShowDialog.id, true, Colors.yellow));
+      _mainDayModel.add(MainDayModel(Strings.day11PlatformUI,
+          AlPlatformBasedWidget.id, false, Colors.green));
+    }
     _mainDayModel
         .add(MainDayModel(Strings.day12, ShoppingHome.id, true, Colors.yellow));
     return _mainDayModel;

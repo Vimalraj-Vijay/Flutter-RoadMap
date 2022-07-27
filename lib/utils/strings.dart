@@ -58,5 +58,5 @@ class Strings {
   static const day11PlatformUI = "Day 11 Platform UI";
 
   // Day 12
-  static const day12 = "Day 12 State Management";
+  static const day12 = "Shopping App";
 }

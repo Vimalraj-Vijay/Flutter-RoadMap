@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../utils/strings.dart';
 import '../provider/cart.dart';
 
 class CartItem extends StatelessWidget {
@@ -31,6 +32,24 @@ class CartItem extends StatelessWidget {
       onDismissed: (_) => {
         Provider.of<Cart>(context, listen: false)
             .removeItemFromCart(cart.items.keys.toList()[index])
+      },
+      confirmDismiss: (direction) {
+        return showDialog(
+            context: context,
+            builder: (ctx) => AlertDialog(
+                  title: const Text("Remove from cart?"),
+                  content: const Text("Are you sure want to remove from cart"),
+                  actions: [
+                    TextButton(
+                      onPressed: () => {Navigator.of(ctx).pop(true)},
+                      child: const Text(Strings.yes),
+                    ),
+                    TextButton(
+                      onPressed: () => {Navigator.of(ctx).pop(false)},
+                      child: const Text(Strings.no),
+                    )
+                  ],
+                ));
       },
       child: Card(
         margin: const EdgeInsets.all(10),
