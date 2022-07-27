@@ -19,7 +19,7 @@ class ManageProducts extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, EditProduct.id);
+                Navigator.pushNamed(context, EditProduct.id, arguments: "");
               },
               icon: const Icon(Icons.add))
         ],

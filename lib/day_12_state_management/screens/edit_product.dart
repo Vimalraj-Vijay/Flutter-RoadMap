@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_12_state_management/provider/products.dart';
+import 'package:flutter_roadmap/day_12_state_management/provider/products_provider.dart';
+import 'package:provider/provider.dart';
 
 class EditProduct extends StatefulWidget {
   static const id = "/editProduct";
@@ -20,6 +22,14 @@ class _EditProductState extends State<EditProduct> {
   var _editProduct =
       Products(id: "", title: "", description: "", imageUrl: "", price: 0);
 
+  var _isInit = true;
+  var _initValues = {
+    "title": "",
+    "description": "",
+    "price": "",
+    "imageurl": "",
+  };
+
   @override
   void dispose() {
     _imageUrlController.removeListener(_updateImageUrl);
@@ -28,6 +38,26 @@ class _EditProductState extends State<EditProduct> {
     _imageFocusNode.dispose();
     _imageUrlController.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      final productId = ModalRoute.of(context)?.settings.arguments as String;
+      if (productId.isEmpty) {
+        _editProduct =
+            Provider.of<ProductProvider>(context).getProductById(productId);
+        _initValues = {
+          "title": _editProduct.title,
+          "description": _editProduct.description,
+          "price": _editProduct.price.toString(),
+          "imageurl": "",
+        };
+        _imageUrlController.text = _editProduct.imageUrl;
+      }
+    }
+    _isInit = false;
+    super.didChangeDependencies();
   }
 
   @override
@@ -43,7 +73,19 @@ class _EditProductState extends State<EditProduct> {
   }
 
   void _saveForm() {
+    final _isValid = _form.currentState?.validate();
+    if (!_isValid!) {
+      return;
+    }
     _form.currentState?.save();
+    if (_editProduct.id.isEmpty) {
+      Provider.of<ProductProvider>(context, listen: false)
+          .addProducts(_editProduct);
+    } else {
+      Provider.of<ProductProvider>(context, listen: false)
+          .updateProduct(_editProduct.id, _editProduct);
+    }
+    Navigator.pop(context);
   }
 
   @override
@@ -70,6 +112,7 @@ class _EditProductState extends State<EditProduct> {
                 child: Column(
                   children: [
                     TextFormField(
+                      initialValue: _initValues["title"],
                       decoration: const InputDecoration(
                         hintText: "Enter the title",
                         labelText: "Title",
@@ -78,6 +121,12 @@ class _EditProductState extends State<EditProduct> {
                               BorderSide(color: Colors.grey, width: 0.0),
                         ),
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please provide the title";
+                        }
+                        return null;
+                      },
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (_) {
                         FocusScope.of(context)
@@ -89,13 +138,15 @@ class _EditProductState extends State<EditProduct> {
                             title: value.toString(),
                             description: _editProduct.description,
                             imageUrl: _editProduct.imageUrl,
-                            price: _editProduct.price);
+                            price: _editProduct.price,
+                            isFavorite: _editProduct.isFavorite);
                       },
                     ),
                     const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
+                      initialValue: _initValues["description"],
                       decoration: const InputDecoration(
                         hintText: "Enter the Description",
                         labelText: "Description",
@@ -107,6 +158,12 @@ class _EditProductState extends State<EditProduct> {
                       minLines: 1,
                       maxLines: 3,
                       keyboardType: TextInputType.multiline,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please provide the description";
+                        }
+                        return null;
+                      },
                       onFieldSubmitted: (_) {
                         FocusScope.of(context).requestFocus(_priceFocusNode);
                       },
@@ -117,13 +174,15 @@ class _EditProductState extends State<EditProduct> {
                             title: _editProduct.title,
                             description: value.toString(),
                             imageUrl: _editProduct.imageUrl,
-                            price: _editProduct.price);
+                            price: _editProduct.price,
+                            isFavorite: _editProduct.isFavorite);
                       },
                     ),
                     const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
+                      initialValue: _initValues["price"],
                       decoration: const InputDecoration(
                         hintText: "Enter the price",
                         labelText: "Price",
@@ -132,6 +191,19 @@ class _EditProductState extends State<EditProduct> {
                               BorderSide(color: Colors.grey, width: 0.0),
                         ),
                       ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Please provide the price";
+                        }
+                        if (double.tryParse(value) == null) {
+                          return "Please enter a valid number";
+                        }
+
+                        if (double.tryParse(value)! <= 0) {
+                          return "Please enter a valid number greater than zero";
+                        }
+                        return null;
+                      },
                       textInputAction: TextInputAction.next,
                       keyboardType:
                           const TextInputType.numberWithOptions(decimal: true),
@@ -142,7 +214,8 @@ class _EditProductState extends State<EditProduct> {
                             title: _editProduct.title,
                             description: _editProduct.description,
                             imageUrl: _editProduct.imageUrl,
-                            price: double.parse(value.toString()));
+                            price: double.parse(value.toString()),
+                            isFavorite: _editProduct.isFavorite);
                       },
                     ),
                     const SizedBox(
@@ -180,6 +253,23 @@ class _EditProductState extends State<EditProduct> {
                                     BorderSide(color: Colors.grey, width: 0.0),
                               ),
                             ),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return "Please provide the image url";
+                              }
+
+                              if (!value.startsWith("http") &&
+                                  !value.startsWith("https")) {
+                                return "Please provide the valid image url";
+                              }
+
+                              if (!value.endsWith(".png") &&
+                                  !value.endsWith(".jpeg") &&
+                                  !value.endsWith(".jpg")) {
+                                return "Please provide the valid image url";
+                              }
+                              return null;
+                            },
                             textInputAction: TextInputAction.done,
                             keyboardType: TextInputType.url,
                             focusNode: _imageFocusNode,
@@ -196,7 +286,8 @@ class _EditProductState extends State<EditProduct> {
                                   title: _editProduct.title,
                                   description: _editProduct.description,
                                   imageUrl: value.toString(),
-                                  price: _editProduct.price);
+                                  price: _editProduct.price,
+                                  isFavorite: _editProduct.isFavorite);
                             },
                           ),
                         )

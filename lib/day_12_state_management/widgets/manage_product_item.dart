@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_roadmap/day_12_state_management/provider/products.dart';
+import 'package:flutter_roadmap/day_12_state_management/provider/products_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../screens/edit_product.dart';
 
@@ -38,6 +40,7 @@ class ManageProductItem extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           products.title,
@@ -56,14 +59,19 @@ class ManageProductItem extends StatelessWidget {
                       children: [
                         IconButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, EditProduct.id);
+                              Navigator.pushNamed(context, EditProduct.id,
+                                  arguments: products.id);
                             },
                             icon: const Icon(
                               Icons.edit,
                               color: Colors.white,
                             )),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Provider.of<ProductProvider>(context,
+                                      listen: false)
+                                  .deleteProduct(products.id);
+                            },
                             icon: const Icon(
                               Icons.delete,
                               color: Colors.white,
